@@ -18,7 +18,7 @@ const Topbar = () => {
           <SchoolOutlinedIcon className="text-white text-[20px]" />
         </span>
 
-        <p className="font-bold text-1xl text-primary_blue_4 font-Orbitron ">
+        <p className="font-bold text-1xl text-primary_blue_4 edu ">
           EduManager
         </p>
       </div>

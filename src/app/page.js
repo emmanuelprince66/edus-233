@@ -15,25 +15,25 @@ import linear from "../assets/images/linear.svg";
 const buttons = [
   {
     id: 1,
-    url: "/login/admin",
+    url: "/admin",
     text: "Log in as a School Admin",
     icn: adminIcon,
   },
   {
     id: 2,
-    url: "/login/teacher",
+    url: "/teacher",
     text: "Log in as a Teacher",
     icn: teacherIcon,
   },
   {
     id: 3,
-    url: "/login/parent",
+    url: "/parent",
     text: "Log in as a Parent",
     icn: parentIcon,
   },
   {
     id: 4,
-    url: "/login/student",
+    url: "/student",
     text: "Log in as a Student",
     icn: studentIcon,
   },

@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import React from "react";
+import Image from "next/image";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import { Divider } from "@mui/material";
 import ErrorOutlinedIcon from "@mui/icons-material/ErrorOutlined";
+import imageUploadIcon from "@/assets/images/imgUploadIcon.png";
 import { Button } from "../ui/button";
 const AdminContent = () => {
   return (
@@ -18,11 +20,12 @@ const AdminContent = () => {
         <Divider sx={{ background: "lightgrey" }} />
 
         <div className="flex justify-between items-center">
-          <form action="" className="bg-white" encType="form/multipart">
-            <label htmlFor="">
+          <form action="" encType="form/multipart">
+            <div className="cursor-pointer flex flex-col items-center">
+              <Image src={imageUploadIcon} className="w-20 h-20" />
               <input type="file" className="sr-only" />
-              Add School Logo
-            </label>
+              <p className="text-white my-1 font-1xl">Add School Icon</p>
+            </div>
           </form>
 
           <div className="flex flex-col items-end gap-3 mt-3">

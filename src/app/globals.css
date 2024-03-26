@@ -6,6 +6,11 @@
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: var(--font-poppins);
+}
+
+.edu {
+  font-family: var(--font-orbitron);
 }
 
 .vertical_layout {
