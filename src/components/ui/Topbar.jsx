@@ -4,18 +4,23 @@ import settingIcon from "@/assets/icons/settingIcon.svg";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import profileIcon from "@/assets/icons/profileIcon.png";
 import { Input } from "@/components/ui/input";
-
 import Image from "next/image";
 
 const Topbar = () => {
   return (
     <div className="p-4 flex justify-between items-center">
       <div className="flex items-center gap-3">
-        <Image src={eduIcon} />
+        <span className="p-1 rounded-full horizontal_layout bg-primary_blue_4">
+          <SchoolOutlinedIcon className="text-white text-[20px]" />
+        </span>
 
-        <p className="font-bold text-1xl text-primary_blue_4 ">EduManager</p>
+        <p className="font-bold text-1xl text-primary_blue_4 font-Orbitron ">
+          EduManager
+        </p>
       </div>
 
       <div className="flex flex-col items-start gap-2">
@@ -31,7 +36,12 @@ const Topbar = () => {
         <Input
           type="text"
           placeholder="Search"
-          icon={<SearchRoundedIcon sx={{ color: "grey", fontSize: "15px" }} />}
+          icon={
+            <SearchRoundedIcon
+              sx={{ color: "grey", fontSize: "15px" }}
+              aria-label="Search"
+            />
+          }
         />
       </div>
 
@@ -50,7 +60,7 @@ const Topbar = () => {
           <KeyboardArrowDownRoundedIcon />
         </div>
 
-        <Image src={settingIcon} />
+        <SettingsOutlinedIcon />
         <NotificationsOutlinedIcon />
       </div>
     </div>

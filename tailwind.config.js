@@ -12,15 +12,15 @@ module.exports = {
     container: {
       center: true,
       padding: "2rem",
-      fontFamily: {
-        Poppins: ["Poppins", "sans-serif"],
-        Orbitron: ["Orbitron", "sans-serif"],
-      },
       screens: {
         "2xl": "1400px",
       },
     },
     extend: {
+      fontFamily: {
+        Poppins: ["Poppins", "sans-serif"],
+        Orbitron: ["Orbitron", "sans-serif"],
+      },
       colors: {
         primary_blue_3: "#F5F5F5",
         primary_blue_5: "#F8F9FF",
