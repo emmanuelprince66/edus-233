@@ -3,8 +3,8 @@ import React from "react";
 const DashboardLayout = ({ sidebar, topbar, children }) => {
   return (
     <div className="h-screen">
-      <div class="grid grid-cols-6 gap-0">
-        <div class="col-start-1 col-span-6">
+      <div className="grid grid-cols-6 gap-0">
+        <div className="col-start-1 col-span-6">
           <header>{topbar}</header>
         </div>
 
