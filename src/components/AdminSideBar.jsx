@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import { Button } from "./ui/button";
-import Image from "next/image";
 
 const AdminSideBar = () => {
   const pathname = usePathname();

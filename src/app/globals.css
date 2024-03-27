@@ -12,6 +12,23 @@
 .edu {
   font-family: var(--font-orbitron);
 }
+/* Remove only the horizontal scrollbar */
+::-webkit-scrollbar {
+  width: 6px; /* Set the desired width for the vertical scrollbar */
+  height: 0px; /* Set height to 0 to remove horizontal scrollbar */
+}
+:nth-last-of-type()
+
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Vertical Thumb */
+::-webkit-scrollbar-thumb:vertical {
+  background-color: #a0a0a0; /* Set the desired background color for the vertical thumb */
+}
 
 .vertical_layout {
   @apply flex flex-col items-center justify-center;

@@ -5,7 +5,7 @@ import { Copyright } from "@mui/icons-material";
 import Image from "next/image";
 import linear from "@/assets/images/linear.svg";
 import startIcon from "@/assets/icons/startIcon.svg";
-
+import Link from "next/link";
 export default function LoginForm({ role, img }) {
   return (
     <>
@@ -25,6 +25,9 @@ export default function LoginForm({ role, img }) {
             <p className="text-3xl tracking-wide font-bold pt-3 pb-5">
               Peculiar Schools
             </p>
+            <Link href="dashboard/admin-dash/admin" className="text-red-500">
+              Admin Dash
+            </Link>
 
             <div className="vertical_layout text-center ">
               <p className="text-1xl font-bold tracking-wider">

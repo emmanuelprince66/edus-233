@@ -23,6 +23,7 @@ module.exports = {
       },
       colors: {
         primary_blue_3: "#F5F5F5",
+        primary_blue_2: "#C2E1FF",
         primary_blue_5: "#F8F9FF",
         primary_blue_4: "#001358",
         border: "hsl(var(--border))",
