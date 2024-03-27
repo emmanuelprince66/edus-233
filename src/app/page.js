@@ -43,13 +43,14 @@ export default function Home() {
   const router = useRouter();
   return (
     <div className=" horizontal_layout w-full h-screen  bg-primary_blue_3">
-      <div className="hidden sm:flex w-full h-full gap-0 relative overflow-y-hidden max-h-full">
-        <Image src={homeImg} />
-        <div className="absolute top-0 left-0 ">
-          <Image src={linear} />
+   
+      <div className="hidden sm:flex w-full h-full gap-0 relative overflow-y-hidden max-h-full ">
+          <Image src={homeImg} className="object-cover w-full h-full " />
+          <div className="absolute top-0 left-0 w-full ">
+            <Image src={linear} className="object-cover w-full h-full " />
+          </div>
         </div>
-      </div>
-      <div className="w-full h-full vertical_layout justify-between">
+      <div className="w-full h-full vertical_layout justify-between relative">
         <div className="vertical_layout  w-full h-full ">
           <div className=" max-h-[100px] max-w-[100px]">
             <Image src={startIcon} className="object-contain w-full h-full" />
@@ -98,7 +99,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className=" bg-primary_blue_4 w-full text-white  py-1 horizontal_layout gap-2">
+        <div className=" bg-primary_blue_4 w-full text-white  py-1 horizontal_layout gap-2 absolute bottom-0">
           <Copyright />
           <p className="font-bold ">Powered by Edu Manager | v1.0.0</p>
         </div>
