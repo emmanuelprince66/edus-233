@@ -11,14 +11,14 @@ export default function LoginForm({ role, img }) {
     <>
       <div className="horizontal_layout w-full h-screen bg-primary_blue_3">
         <div className="hidden sm:flex w-full h-full gap-0 relative overflow-y-hidden max-h-full ">
-          <Image src={img} />
-          <div className="absolute top-0 left-0 ">
-            <Image src={linear} />
+          <Image src={img} className="object-cover w-full h-full " />
+          <div className="absolute top-0 left-0 w-full ">
+            <Image src={linear} className="object-cover w-full h-full " />
           </div>
         </div>
 
-        <div className="vertical_layout justify-between w-full h-full">
-          <div className="vertical_layout  w-full h-full ">
+        <div className="vertical_layout justify-between w-full h-full relative">
+          <div className="vertical_layout  py-10 ">
             <div className=" max-h-[100px] max-w-[100px]">
               <Image src={startIcon} className="object-contain w-full h-full" />
             </div>
@@ -78,7 +78,7 @@ export default function LoginForm({ role, img }) {
 
           {/* form fields ends */}
 
-          <div className=" bg-primary_blue_4 w-full text-white  py-1 horizontal_layout gap-2">
+          <div className=" bg-primary_blue_4 w-full text-white  py-1 horizontal_layout gap-2 absolute bottom-0">
             <Copyright />
             <p className="font-bold ">Powered by Edu Manager | v1.0.0</p>
           </div>
