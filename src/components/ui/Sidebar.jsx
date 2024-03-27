@@ -3,7 +3,7 @@ import AdminSideBar from "../AdminSideBar";
 
 const Sidebar = () => {
   return (
-    <div className=" text-black border rounded-r-lg h-[88vh]  border-grey w-full p-2 ">
+    <div className=" text-black border rounded-r-lg h-[100vh]  border-grey w-full p-2 ">
       <p className="items-start text-[10px] font-bold my-2 text-primary_blue_4">
         MAIN
       </p>

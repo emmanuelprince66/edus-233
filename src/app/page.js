@@ -7,6 +7,7 @@ import adminIcon from "../assets/icons/adminIcon.svg";
 import studentIcon from "../assets/icons/studentIcon.svg";
 import teacherIcon from "../assets/icons/teacherIcon.svg";
 import parentIcon from "../assets/icons/parentIcon.svg";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Copyright } from "@mui/icons-material";
 import { useRouter } from "next/navigation";
@@ -72,17 +73,14 @@ export default function Home() {
           <div className="gap-4 w-full vertical_layout max-w-[80%] ">
             {buttons?.map((btn) => {
               return (
-                <Button
-                  variant="default"
-                  size="lg"
-                  key={btn?.id}
-                  onClick={() => router.push(btn?.url)}
-                >
-                  <span className="flex gap-3 items-center">
-                    <Image src={btn?.icn} className="w-[24px] h-[24px]" />
-                    <p className="text-sm sm:text-lg ">{btn?.text}</p>
-                  </span>
-                </Button>
+                <Link key={btn?.id} href={btn?.url} className="w-full">
+                  <Button variant="default" size="lg" key={btn?.id}>
+                    <span className="flex gap-3 items-center">
+                      <Image src={btn?.icn} className="w-[24px] h-[24px]" />
+                      <p className="text-sm sm:text-lg ">{btn?.text}</p>
+                    </span>
+                  </Button>
+                </Link>
               );
             })}
 
