@@ -1,9 +1,16 @@
 import React from "react";
 import { Input } from "../ui/input";
 import { Button } from "../ui/button";
-const SchoolInfoForm = ({ setSchoolInfoModal, schoolInfoModal }) => {
+import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
+
+const SchoolInfoForm = ({ handleClose }) => {
   return (
     <div className="w-full flex-col items-start gap-2 ">
+      <div className="flex justify-between" onClick={handleClose}>
+        <p className="text-bolder text-[20px] ">School Information</p>
+
+        <HighlightOffRoundedIcon className=" hover:text-primary_blue_4 text-gray-300 cursor-pointer " />
+      </div>
       <p className="text-gray-400 text-[10px]">Settings</p>
 
       <form action="" className="mt-4">

@@ -4,7 +4,7 @@ import React from "react";
 import { useState } from "react";
 import Stepper from "./Stepper";
 import { Button } from "../ui/button";
-const AdminStepper = ({ closeSchoolInfoModal, setSchoolInfoModal }) => {
+const AdminStepper = ({ setSchoolSessionModal, setSchoolInfoModal }) => {
   const [btnStatus, setBtnStatus] = useState(false);
 
   return (
@@ -50,6 +50,7 @@ const AdminStepper = ({ closeSchoolInfoModal, setSchoolInfoModal }) => {
 
           <div>
             <Button
+              onClick={() => setSchoolSessionModal(true)}
               variant={btnStatus ? "default" : "outline"}
               className="w-[8rem]"
             >

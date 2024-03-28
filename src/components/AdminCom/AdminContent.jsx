@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import React from "react";
-import { Box, Modal } from "@mui/material";
 import Image from "next/image";
 import KeyboardArrowDownRoundedIcon from "@mui/icons-material/KeyboardArrowDownRounded";
 import { Divider } from "@mui/material";
@@ -11,20 +10,13 @@ import imageUploadIcon from "@/assets/images/imgUploadIcon.png";
 import { Button } from "../ui/button";
 import AdminStepper from "./AdminStepper";
 import SchoolInfoForm from "./SchoolInfoForm";
-import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
+import ModalComponent from "../ui/ModalComponent";
+import SchoolSession from "./SchoolSession";
 const AdminContent = () => {
-  const style = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    transform: "translate(-50%, -50%)",
-    borderRadius: "12px",
-    width: "745px",
-    bgcolor: "background.paper",
-    p: 3,
-  };
   const [schoolInfoModal, setSchoolInfoModal] = useState(false);
+  const [schoolSessionModal, setSchoolSessionModal] = useState(false);
   const closeSchoolInfoModal = () => setSchoolInfoModal(false);
+  const closeSchoolSessionModal = () => setSchoolSessionModal(false);
 
   return (
     <div className="rounded-lg flex flex-col items-start gap-4 bg-white w-full">
@@ -66,7 +58,7 @@ const AdminContent = () => {
       <div className="w-full p-2 ">
         <AdminStepper
           setSchoolInfoModal={setSchoolInfoModal}
-          closeSchoolInfoModal={closeSchoolInfoModal}
+          setSchoolSessionModal={setSchoolSessionModal}
         />
       </div>
 
@@ -74,36 +66,24 @@ const AdminContent = () => {
 
       {/* school info modal start */}
       <div className="w-full">
-        <Modal
-          open={schoolInfoModal}
-          onClose={closeSchoolInfoModal}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-          PaperProps={{
-            sx: {
-              border: "none", // Remove the border
-              boxShadow: "none", // Remove the box shadow
-            },
-          }}
-        >
-          <Box sx={style}>
-            <div
-              className="flex justify-between"
-              onClick={closeSchoolInfoModal}
-            >
-              <p className="text-bolder text-[20px] ">School Information</p>
-
-              <HighlightOffRoundedIcon className=" hover:text-primary_blue_4 text-gray-300 cursor-pointer " />
-            </div>
-            <SchoolInfoForm
-              setSchoolInfoModal={setSchoolInfoModal}
-              schoolInfoModal={schoolInfoModal}
-            />
-          </Box>
-        </Modal>
+        <ModalComponent open={schoolInfoModal} close={closeSchoolInfoModal}>
+          <SchoolInfoForm handleClose={closeSchoolInfoModal} />
+        </ModalComponent>
       </div>
 
       {/* school info modal ends */}
+
+      {/* session  & term starts */}
+      <div className="w-full">
+        <ModalComponent
+          open={schoolSessionModal}
+          close={closeSchoolSessionModal}
+        >
+          <SchoolSession handleClose={closeSchoolSessionModal} />
+        </ModalComponent>
+      </div>
+
+      {/* session  & term ends */}
     </div>
   );
 };
