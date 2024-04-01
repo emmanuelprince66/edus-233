@@ -1,7 +1,7 @@
 import React from "react";
 import { Modal, Box } from "@mui/material";
 
-const ModalComponent = ({ children, open, close, title }) => {
+const ModalComponent = ({ children, open, close }) => {
   const style = {
     position: "absolute",
     top: "50%",

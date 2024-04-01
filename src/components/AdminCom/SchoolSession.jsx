@@ -14,12 +14,9 @@ const SchoolSession = ({ handleClose }) => {
         <ListSession
           setSessionExist={setSessionExist}
           setShowCreateSessionForm={setShowCreateSessionForm}
-          showCreateSessionForm={showCreateSessionForm}
-          sessionExist={sessionExist}
         />
       ) : (
         <CreateSessionForm
-          setSessionExist={setSessionExist}
           setShowCreateSessionForm={setShowCreateSessionForm}
           showCreateSessionForm={showCreateSessionForm}
           handleClose={handleClose}

@@ -12,11 +12,21 @@ import AdminStepper from "./AdminStepper";
 import SchoolInfoForm from "./SchoolInfoForm";
 import ModalComponent from "../ui/ModalComponent";
 import SchoolSession from "./SchoolSession";
+import AddSchoolLevels from "./AddSchoolLevels";
+import GradeListing from "./GradeListing";
+import ClassGroups from "./ClassGroups";
 const AdminContent = () => {
   const [schoolInfoModal, setSchoolInfoModal] = useState(false);
   const [schoolSessionModal, setSchoolSessionModal] = useState(false);
+  const [schoolLevelsModal, setschoolLevelsModal] = useState(false);
+  const [gradeListingModal, setGradeListingModal] = useState(false);
+  const [classGroupModal, setClassGroupModal] = useState(false);
+
+  const closeClassGroupModal = () => setClassGroupModal(false);
+  const closeSchoolLevelsModal = () => setschoolLevelsModal(false);
   const closeSchoolInfoModal = () => setSchoolInfoModal(false);
   const closeSchoolSessionModal = () => setSchoolSessionModal(false);
+  const closeGradeListingModal = () => setGradeListingModal(false);
 
   return (
     <div className="rounded-lg flex flex-col items-start gap-4 bg-white w-full">
@@ -58,7 +68,10 @@ const AdminContent = () => {
       <div className="w-full p-2 ">
         <AdminStepper
           setSchoolInfoModal={setSchoolInfoModal}
+          setschoolLevelsModal={setschoolLevelsModal}
           setSchoolSessionModal={setSchoolSessionModal}
+          setGradeListingModal={setGradeListingModal}
+          setClassGroupModal={setClassGroupModal}
         />
       </div>
 
@@ -69,21 +82,37 @@ const AdminContent = () => {
         <ModalComponent open={schoolInfoModal} close={closeSchoolInfoModal}>
           <SchoolInfoForm handleClose={closeSchoolInfoModal} />
         </ModalComponent>
-      </div>
 
-      {/* school info modal ends */}
+        {/* school info modal ends */}
 
-      {/* session  & term starts */}
-      <div className="w-full">
+        {/* session  & term starts */}
         <ModalComponent
           open={schoolSessionModal}
           close={closeSchoolSessionModal}
         >
           <SchoolSession handleClose={closeSchoolSessionModal} />
         </ModalComponent>
-      </div>
 
-      {/* session  & term ends */}
+        {/* session  & term ends */}
+
+        {/* add school levels start */}
+        <ModalComponent open={schoolLevelsModal} close={closeSchoolLevelsModal}>
+          <AddSchoolLevels handleClose={closeSchoolLevelsModal} />
+        </ModalComponent>
+        {/* add school levels end */}
+
+        {/* add school levels start */}
+        <ModalComponent open={gradeListingModal} close={closeGradeListingModal}>
+          <GradeListing handleClose={closeGradeListingModal} />
+        </ModalComponent>
+        {/* add school levels end */}
+
+        {/* class groups start */}
+        <ModalComponent open={classGroupModal} close={closeClassGroupModal}>
+          <ClassGroups handleClose={closeClassGroupModal} />
+        </ModalComponent>
+        {/* class group modals end */}
+      </div>
     </div>
   );
 };

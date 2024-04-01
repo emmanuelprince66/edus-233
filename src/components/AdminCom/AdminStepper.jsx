@@ -4,13 +4,18 @@ import React from "react";
 import { useState } from "react";
 import Stepper from "./Stepper";
 import { Button } from "../ui/button";
-const AdminStepper = ({ setSchoolSessionModal, setSchoolInfoModal }) => {
+const AdminStepper = ({
+  setSchoolSessionModal,
+  setGradeListingModal,
+  setSchoolInfoModal,
+  setClassGroupModal,
+  setschoolLevelsModal,
+}) => {
   const [btnStatus, setBtnStatus] = useState(false);
 
   return (
     <div className="flex justify-between w-full h-full">
       <Stepper btnStatus={btnStatus} />
-
       {/* form buttons */}
       <div className="flex flex-col gap-[2rem] w-[80%]">
         <div
@@ -73,6 +78,7 @@ const AdminStepper = ({ setSchoolSessionModal, setSchoolInfoModal }) => {
 
           <div>
             <Button
+              onClick={() => setschoolLevelsModal(true)}
               variant={btnStatus ? "default" : "outline"}
               className="w-[8rem]"
             >
@@ -95,6 +101,7 @@ const AdminStepper = ({ setSchoolSessionModal, setSchoolInfoModal }) => {
 
           <div>
             <Button
+              onClick={() => setGradeListingModal(true)}
               variant={btnStatus ? "default" : "outline"}
               className="w-[8rem]"
             >
@@ -111,12 +118,13 @@ const AdminStepper = ({ setSchoolSessionModal, setSchoolInfoModal }) => {
           }   `}
         >
           <div className="flex flex-col items-start gap-2">
-            <p className="text-[12px]">Academic Session /Term</p>
-            <p className="text-[15px] text-bold">Add active Session and Term</p>
+            <p className="text-[12px]">Classes Groups </p>
+            <p className="text-[15px] text-bold">Assign Groups to Classes</p>
           </div>
 
           <div>
             <Button
+              onClick={() => setClassGroupModal(true)}
               variant={btnStatus ? "default" : "outline"}
               className="w-[8rem]"
             >

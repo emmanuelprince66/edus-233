@@ -329,6 +329,7 @@ const SessionForm = ({ handleClose }) => {
                 variant="outline"
                 className="border border-primary_blue_4"
                 size="lg"
+                onClick={handleClose}
               >
                 Cancel
               </Button>

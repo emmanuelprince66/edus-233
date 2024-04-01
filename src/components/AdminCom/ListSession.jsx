@@ -19,19 +19,14 @@ import {
 } from "@mui/material";
 import TermTableData from "./TermTableData";
 
-const ListSession = ({
-  setSessionExist,
-  sessionExist,
-  setShowCreateSessionForm,
-  showCreateSessionForm,
-}) => {
+const ListSession = ({ setSessionExist, setShowCreateSessionForm }) => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(100);
   const [showSession, setShowSession] = useState(true);
 
   const handleShowCreateSessionForm = () => {
-    setShowCreateSessionForm((prev) => !showCreateSessionForm);
-    setSessionExist((prev) => !sessionExist);
+    setShowCreateSessionForm((prev) => !prev);
+    setSessionExist((prev) => !prev);
   };
 
   const sessionData = [

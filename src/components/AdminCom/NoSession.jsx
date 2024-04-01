@@ -7,13 +7,9 @@ import Image from "next/image";
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 
-const NoSession = ({
-  setShowCreateSessionForm,
-  showCreateSessionForm,
-  handleClose,
-}) => {
+const NoSession = ({ setShowCreateSessionForm, handleClose }) => {
   const handleShowCreateSession = () => {
-    setShowCreateSessionForm((prev) => !showCreateSessionForm);
+    setShowCreateSessionForm((prev) => !prev);
   };
   return (
     <div className="w-full h-full ">

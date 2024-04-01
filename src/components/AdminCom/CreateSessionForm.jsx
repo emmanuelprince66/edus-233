@@ -16,7 +16,6 @@ const CreateSessionForm = ({
       ) : (
         <NoSession
           setShowCreateSessionForm={setShowCreateSessionForm}
-          showCreateSessionForm={showCreateSessionForm}
           handleClose={handleClose}
         />
       )}
