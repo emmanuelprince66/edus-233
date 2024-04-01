@@ -36,6 +36,9 @@
 .horizontal_layout {
   @apply flex justify-center items-center;
 }
+.vertical_layout2 {
+  @apply flex justify-center   flex-col items-start;
+}
 
 @layer base {
   :root {

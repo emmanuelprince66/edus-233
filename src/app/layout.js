@@ -10,7 +10,7 @@ const inter = Inter({
 
 const orbitron = Orbitron({
   subsets: ["latin"],
-  weight: "400",
+  weight: ["400"],
   variable: "--font-obitron",
   display: "swap",
 });
