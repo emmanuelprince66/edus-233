@@ -45,7 +45,7 @@ const CreateAssessment = () => {
             displayEmpty
           >
             <MenuItem value="" disabled>
-              <Box className="edu">Select Assessment Type</Box>
+              <Box className="edu text-[10px]">Select Assessment Type</Box>
             </MenuItem>
             <MenuItem value="A" className="edu">
               Exam
