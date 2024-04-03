@@ -31,6 +31,7 @@ const CreateAssessment = () => {
 
           <Select
             className="edu"
+            defaultValue=""
             sx={{
               width: "100%",
               height: "40px",
