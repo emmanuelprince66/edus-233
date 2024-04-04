@@ -11,6 +11,7 @@ import CommunicationContent from "@/components/AdminCom/CommunicationContent";
 import InvoicingContent from "@/components/AdminCom/InvoicingContent";
 import LibraryContent from "@/components/AdminCom/LibraryContent";
 import StudentContent from "@/components/AdminCom/StudentContent";
+import Roles from "@/components/AdminCom/Roles";
 
 export default function AdminDashboard({ params }) {
   const { section } = params;
@@ -34,6 +35,9 @@ export default function AdminDashboard({ params }) {
       break;
     case "library":
       content = <LibraryContent />;
+      break;
+    case "roles":
+      content = <Roles />;
       break;
     // Handle other sections
     default:

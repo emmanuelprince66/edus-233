@@ -19,11 +19,37 @@ const CreateGrade = () => {
 
       <div className=" grid grid-cols-2 gap-3 my-4 max-h-[70vh] overflow-y-scroll">
         <div className="vertical_layout2 gap-1  col-span-2">
-          <p className="text-gray-700 text-[12px] ">Grade Level</p>
+          <p className="text-gray-700 text-[12px] ">Grade Name</p>
           <Input
             placeholder="E.g Primary.."
             className="w-[250px] rounded-r-none"
           />
+        </div>
+        <div className="vertical_layout2 gap-1 col-span-2">
+          <p className="text-gray-700 text-[12px] ">Assessment Type</p>
+          <Select
+            sx={{
+              width: "100%",
+              height: "40px",
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#001358",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "#001358",
+              },
+            }}
+            displayEmpty
+          >
+            <MenuItem value="" disabled>
+              <Box className="edu text-[10px]">Select Assessment</Box>
+            </MenuItem>
+            <MenuItem value="A" className="edu">
+              Playgroup Assessment
+            </MenuItem>
+            <MenuItem value="B" className="edu">
+              Nursery Assessment
+            </MenuItem>
+          </Select>
         </div>
         <div className="vertical_layout2 gap-1">
           <p className="text-gray-700 text-[12px] ">Grade A</p>
@@ -34,33 +60,8 @@ const CreateGrade = () => {
           </div>
         </div>
         <div className="vertical_layout2 gap-1">
-          <p className="text-gray-700 text-[12px] ">Grade Status</p>
-
-          <Select
-            className="edu"
-            disabled
-            sx={{
-              width: "100%",
-              height: "40px",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-            }}
-            displayEmpty
-          >
-            <Box className="edu">Excellent</Box>
-
-            {/* <MenuItem value="" disabled></MenuItem>
-            <MenuItem value="A" className="edu">
-              Exam
-            </MenuItem>
-            <MenuItem value="B" className="edu">
-              CA
-            </MenuItem> */}
-          </Select>
+          <p className="text-gray-700 text-[12px] ">Grade Remark</p>
+          <Input className="w-full  " type="text" placeholder="E.g Excellent" />
         </div>
         <div className="vertical_layout2 gap-1">
           <p className="text-gray-700 text-[12px] ">Grade B</p>
@@ -71,33 +72,8 @@ const CreateGrade = () => {
           </div>
         </div>
         <div className="vertical_layout2 gap-1">
-          <p className="text-gray-700 text-[12px] ">Grade Status</p>
-
-          <Select
-            className="edu"
-            disabled
-            sx={{
-              width: "100%",
-              height: "40px",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-            }}
-            displayEmpty
-          >
-            <Box className="edu">Very Good</Box>
-
-            {/* <MenuItem value="" disabled></MenuItem>
-            <MenuItem value="A" className="edu">
-              Exam
-            </MenuItem>
-            <MenuItem value="B" className="edu">
-              CA
-            </MenuItem> */}
-          </Select>
+          <p className="text-gray-700 text-[12px] ">Grade Remark</p>
+          <Input className="w-full  " type="text" placeholder="E.g Very Good" />
         </div>
         <div className="vertical_layout2 gap-1">
           <p className="text-gray-700 text-[12px] ">Grade C</p>
@@ -108,33 +84,9 @@ const CreateGrade = () => {
           </div>
         </div>
         <div className="vertical_layout2 gap-1">
-          <p className="text-gray-700 text-[12px] ">Grade Status</p>
+          <p className="text-gray-700 text-[12px] ">Grade Remark</p>
 
-          <Select
-            className="edu"
-            disabled
-            sx={{
-              width: "100%",
-              height: "40px",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-            }}
-            displayEmpty
-          >
-            <Box className="edu">Good</Box>
-
-            {/* <MenuItem value="" disabled></MenuItem>
-            <MenuItem value="A" className="edu">
-              Exam
-            </MenuItem>
-            <MenuItem value="B" className="edu">
-              CA
-            </MenuItem> */}
-          </Select>
+          <Input className="w-full  " type="text" placeholder=" Good" />
         </div>
         <div className="vertical_layout2 gap-1">
           <p className="text-gray-700 text-[12px] ">Grade D</p>
@@ -145,33 +97,9 @@ const CreateGrade = () => {
           </div>
         </div>
         <div className="vertical_layout2 gap-1">
-          <p className="text-gray-700 text-[12px] ">Grade Status</p>
+          <p className="text-gray-700 text-[12px] ">Grade Remark</p>
 
-          <Select
-            className="edu"
-            disabled
-            sx={{
-              width: "100%",
-              height: "40px",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-            }}
-            displayEmpty
-          >
-            <Box className="edu">Poor</Box>
-
-            {/* <MenuItem value="" disabled></MenuItem>
-            <MenuItem value="A" className="edu">
-              Exam
-            </MenuItem>
-            <MenuItem value="B" className="edu">
-              CA
-            </MenuItem> */}
-          </Select>
+          <Input className="w-full  " type="text" placeholder="E.g Poor" />
         </div>
         <div className="vertical_layout2 gap-1">
           <p className="text-gray-700 text-[12px] ">Grade E</p>
@@ -182,33 +110,9 @@ const CreateGrade = () => {
           </div>
         </div>
         <div className="vertical_layout2 gap-1">
-          <p className="text-gray-700 text-[12px] ">Grade Status</p>
+          <p className="text-gray-700 text-[12px] ">Grade Remark</p>
 
-          <Select
-            className="edu"
-            disabled
-            sx={{
-              width: "100%",
-              height: "40px",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-            }}
-            displayEmpty
-          >
-            <Box className="edu">Very Poor</Box>
-
-            {/* <MenuItem value="" disabled></MenuItem>
-            <MenuItem value="A" className="edu">
-              Exam
-            </MenuItem>
-            <MenuItem value="B" className="edu">
-              CA
-            </MenuItem> */}
-          </Select>
+          <Input className="w-full  " type="text" placeholder="E.g Very Poor" />
         </div>
         <div className="vertical_layout2 gap-1">
           <p className="text-gray-700 text-[12px] ">Grade F</p>
@@ -219,32 +123,8 @@ const CreateGrade = () => {
           </div>
         </div>
         <div className="vertical_layout2 gap-1">
-          <p className="text-gray-700 text-[12px] ">Grade Status</p>
-
-          <Select
-            disabled
-            sx={{
-              width: "100%",
-              height: "40px",
-              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-              "&:hover .MuiOutlinedInput-notchedOutline": {
-                borderColor: "#001358",
-              },
-            }}
-            displayEmpty
-          >
-            <Box className="edu">Fail</Box>
-
-            {/* <MenuItem value="" disabled></MenuItem>
-            <MenuItem value="A" className="edu">
-              Exam
-            </MenuItem>
-            <MenuItem value="B" className="edu">
-              CA
-            </MenuItem> */}
-          </Select>
+          <p className="text-gray-700 text-[12px] ">Grade Remark</p>
+          <Input className="w-full  " type="text" placeholder="E.g Fail" />
         </div>
 
         {/* sub btn */}
