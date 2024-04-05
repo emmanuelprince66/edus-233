@@ -48,6 +48,18 @@ const AdminSideBar = () => {
       url: "/dashboard/admin-dash/library",
       icn: <MenuBookOutlinedIcon />,
     },
+    {
+      id: 7,
+      nm: "Roles",
+      url: "/dashboard/admin-dash/roles",
+      icn: <MenuBookOutlinedIcon />,
+    },
+    {
+      id: 8,
+      nm: "Staff List",
+      url: "/dashboard/admin-dash/staff-list",
+      icn: <MenuBookOutlinedIcon />,
+    },
   ];
 
   return (
