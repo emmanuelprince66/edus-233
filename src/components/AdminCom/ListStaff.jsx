@@ -15,9 +15,18 @@ import {
 import AddRoundedIcon from "@mui/icons-material/AddRounded";
 
 import { Button } from "../ui/button";
+import ModalComponent from "../ui/ModalComponent";
+import EditStaffProfile from "./EditStaffProfile";
+import CreateStaffProfile from "./CreateStaffProfile";
 const ListStaff = () => {
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(100);
+
+  const [openEditStaffModal, setOpenEditStaffModal] = useState(false);
+  const [openCreateStaffModal, setOpenCreateStaffModal] = useState(false);
+
+  const handleCloseCreateStaffModal = () => setOpenCreateStaffModal(false);
+  const handleCloseEditStaffModal = () => setOpenEditStaffModal(false);
   const staffRoles = [
     {
       id: 1,
@@ -51,7 +60,7 @@ const ListStaff = () => {
       <div className="flex justify-between items-center pb-4 border-b border-gray-300 ">
         <p className=" text-2xl text-bold">Staff List</p>
         <Button
-          //   onClick={handleOpen}
+          onClick={() => setOpenCreateStaffModal(true)}
           variant="default"
           className="flex gap-2 items-center w-[15%] text-sm"
         >
@@ -90,6 +99,7 @@ const ListStaff = () => {
                     <TableCell className="edu ">
                       <div className=" flex  gap-1 items-center">
                         <EditNoteRoundedIcon
+                          onClick={() => setOpenEditStaffModal(true)}
                           sx={{ color: "#001358", cursor: "pointer" }}
                         />
                         <DeleteForeverRoundedIcon
@@ -118,6 +128,26 @@ const ListStaff = () => {
           // onRowsPerPageChange is removed as the number of rows per page is fixed
         />
       </div>
+
+      {/* Create Staff Profile Modal Start */}
+
+      <ModalComponent
+        open={openCreateStaffModal}
+        close={handleCloseCreateStaffModal}
+      >
+        <CreateStaffProfile />
+      </ModalComponent>
+      {/* Create Staff Profile Modal End */}
+
+      {/* Edit Staff Profile Modal Start */}
+
+      <ModalComponent
+        open={openEditStaffModal}
+        close={handleCloseEditStaffModal}
+      >
+        <EditStaffProfile />
+      </ModalComponent>
+      {/* Edit Staff Profile Modal End */}
     </div>
   );
 };
