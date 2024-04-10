@@ -3,6 +3,7 @@ import { Input } from "../ui/input";
 import { Button } from "../ui/button";
 import HighlightOffRoundedIcon from "@mui/icons-material/HighlightOffRounded";
 
+
 const SchoolInfoForm = ({ handleClose }) => {
   return (
     <div className="w-full flex-col items-start gap-2 ">
@@ -15,6 +16,8 @@ const SchoolInfoForm = ({ handleClose }) => {
 
       <form action="" className="mt-4">
         <div className="w-full grid grid-cols-2 gap-4 ">
+     
+        
           <div className=" col-span-2 ">
             <p className="text-gray-800 text-[10px] mb-1">School Name</p>
             <Input type="text" placeholder="innertext" />

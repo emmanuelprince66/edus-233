@@ -8,7 +8,9 @@
   margin: 0;
   font-family: var(--font-poppins);
 }
-
+.poppins-font {
+  font-family: var(--font-poppins);
+}
 .edu {
   font-family: var(--font-orbitron);
 }

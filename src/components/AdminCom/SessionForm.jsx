@@ -2,27 +2,24 @@
 
 import React, { useState } from "react";
 import { Button } from "../ui/button";
-import dayjs from "dayjs";
-import { DemoContainer, DemoItem } from "@mui/x-date-pickers/internals/demo";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { MobileDatePicker } from "@mui/x-date-pickers/MobileDatePicker";
-import { DesktopDatePicker } from "@mui/x-date-pickers/DesktopDatePicker";
-import { StaticDatePicker } from "@mui/x-date-pickers/StaticDatePicker";
+
 import { Input } from "../ui/input";
+
+import DatePicker from "react-datepicker";
+import CalendarMonthRoundedIcon from "@mui/icons-material/CalendarMonthRounded";
+import "react-datepicker/dist/react-datepicker.css";
 
 const SessionForm = ({ handleClose }) => {
   const [showSession, setshowSession] = useState(true);
-  const [calenderDate, setCalenderDate] = useState(null);
-  const [sessionStartDate, setSessionStartDate] = useState(null);
-  const [sessionEndDate, setSessionEndDate] = useState(null);
-  const [firstTermStartDate, setFirstTermStartDate] = useState(null);
-  const [firstTermEndDate, setFirstTermEndDate] = useState(null);
-  const [secondTermStartDate, setSecondTermStartDate] = useState(null);
-  const [secondTermEndDate, setSecondTermEndDate] = useState(null);
-  const [thirdTermStartDate, setThirdTermStartDate] = useState(null);
-  const [thirdTermEndDate, setThirdTermEndDate] = useState(null);
+  const [calenderDate, setCalenderDate] = useState(new Date());
+  const [sessionStartDate, setSessionStartDate] = useState(new Date());
+  const [sessionEndDate, setSessionEndDate] = useState(new Date());
+  const [firstTermStartDate, setFirstTermStartDate] = useState(new Date());
+  const [firstTermEndDate, setFirstTermEndDate] = useState(new Date());
+  const [secondTermStartDate, setSecondTermStartDate] = useState(new Date());
+  const [secondTermEndDate, setSecondTermEndDate] = useState(new Date());
+  const [thirdTermStartDate, setThirdTermStartDate] = useState(new Date());
+  const [thirdTermEndDate, setThirdTermEndDate] = useState(new Date());
 
   return (
     <div className="w-full flex flex-col items-start gap-2 max-h-[90vh] overflow-y-scroll">
@@ -59,91 +56,53 @@ const SessionForm = ({ handleClose }) => {
         <div className="grid grid-cols-2 gap-4">
           <div className="vertical_layout2 gap-2">
             <p className="text-gray-400 text-[10px]">Session Name</p>
-            <Input type="text" placeholder="Enter Session Name" />
+            <Input type="text" placeholder="Enter Session Nae" />
           </div>
-          <div className="vertical_layout2 gap-2 w-full">
+          <div className="vertical_layout2 gap-2 w-full ">
             <p className="text-gray-400 text-[10px]">Session Calender</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={calenderDate}
-                  disableFuture
-                  onChange={setCalenderDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={calenderDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setCalenderDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">Session Start Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={sessionStartDate}
-                  disableFuture
-                  onChange={setSessionStartDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={sessionStartDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setSessionStartDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">Session End Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={sessionEndDate}
-                  disableFuture
-                  onChange={setSessionEndDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={sessionEndDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setSessionEndDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
 
           <div className="col-span-2">
@@ -151,177 +110,99 @@ const SessionForm = ({ handleClose }) => {
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">Start Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={firstTermStartDate}
-                  disableFuture
-                  onChange={setFirstTermStartDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={firstTermStartDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setFirstTermStartDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">End Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={firstTermEndDate}
-                  disableFuture
-                  onChange={setFirstTermEndDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={firstTermEndDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setFirstTermEndDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="col-span-2">
             <p className="text-bold text-sm">Second Term</p>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">Start Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={secondTermStartDate}
-                  disableFuture
-                  onChange={setSecondTermStartDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={secondTermStartDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setSecondTermStartDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">End Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={secondTermEndDate}
-                  disableFuture
-                  onChange={setSecondTermEndDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={secondTermEndDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setSecondTermEndDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="col-span-2">
             <p className="text-bold text-sm">Third Term</p>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">Start Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={thirdTermStartDate}
-                  disableFuture
-                  onChange={setThirdTermStartDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={thirdTermStartDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setThirdTermStartDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className="vertical_layout2 gap-2 w-full">
             <p className="text-gray-400 text-[10px]">End Date</p>
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DemoItem sx={{ width: "100%" }}>
-                <DatePicker
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      fontFamily: "Poppins",
-                      maxHeight: "2.5rem",
-                      "& fieldset": {
-                        borderColor: "#e2e8f0", // Set the desired border color here
-                      },
-                      "&:hover fieldset": {
-                        borderColor: "#e2e8f0", // Set the border color on hover here
-                      },
-                      "&.Mui-focused fieldset": {
-                        borderColor: "#001358", // Set the border color on focus here
-                      },
-                    },
-                  }}
-                  defaultValue={thirdTermEndDate}
-                  disableFuture
-                  onChange={setThirdTermEndDate}
-                  views={["year", "month", "day"]}
-                />
-              </DemoItem>
-            </LocalizationProvider>
+            <div className=" p-3  rounded-sm border w-full border-gray-200  cursor-pointer flex justify-between items-center">
+              <DatePicker
+                selected={thirdTermEndDate}
+                className="w-[48vh] cursor-pointer"
+                onChange={(date) => setThirdTermEndDate(date)}
+                dateFormat="dd/MM/yy"
+              />
+
+              <CalendarMonthRoundedIcon
+                sx={{ color: "gray", fontSize: "15px", mr: "5px" }}
+              />
+            </div>
           </div>
           <div className=" col-span-2 my-3 ">
             <div className="flex max-w-[50%] mx-auto  gap-4">
