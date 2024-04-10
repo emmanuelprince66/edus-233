@@ -27,8 +27,23 @@ const EditAssessment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(assesmentInputGroups.map((group) => group.values));
+    const formData = {};
+    assesmentInputGroups.forEach((group, groupIndex) => {
+      group.values.forEach((value, inputIndex) => {
+        let inputName;
+        if (inputIndex === 0) {
+          inputName = "Assessment Name";
+        } else if (inputIndex === 1) {
+          inputName = "Assessment Percent";
+        } else {
+          inputName = "Assessment Type";
+        }
+        formData[`${inputName} ${groupIndex + 1}`] = value;
+      });
+    });
+    console.log(formData);
   };
+  
   return (
     <div className="w-full vertical_layout2 ">
       <div className="vertical_layout2 gap-1 my-3">
